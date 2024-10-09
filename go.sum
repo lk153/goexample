@@ -1,0 +1,6 @@
+golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 h1:6zppjxzCulZykYSLyVDYbneBfbaBIQPYMevg0bEwv2s=
+golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4/go.mod h1:jJ57K6gSWd91VN4djpZkiMVwK6gcyfeH4XE8wZrZaV4=
+golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f h1:v4INt8xihDGvnrfjMDVXGxw9wrfxYyCjk0KbXjhR55s=
+golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/tools v0.1.13-0.20220917004541-4d18923f060e h1:K/LreqAwv7hZaSPyj5LvaiQd2wROouJDabf2r+oBqUw=
+golang.org/x/tools v0.1.13-0.20220917004541-4d18923f060e/go.mod h1:VsjNM1dMo+Ofkp5d7y7fOdQZD8MTXSQ4w3EPk65AvKU=
