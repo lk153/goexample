@@ -6,10 +6,14 @@ import (
 	"strconv"
 )
 
+// func main() {
+// 	result := regex.StrExpress("minusonezeropluseight")
+// 	fmt.Println("RESULT:", result)
+// }
+
 func StrExpress(input string) (output string) {
 	re := regexp.MustCompile("zero|one|two|three|four|five|six|seven|eight|nine|minus|plus")
 	result := re.FindAll([]byte(input), -1)
-
 	parsed := []string{}
 	for _, str := range result {
 		parsed = append(parsed, string(str))
@@ -19,8 +23,9 @@ func StrExpress(input string) (output string) {
 	return transform(total)
 }
 
-func transform(total int) (result string) {
-	numMap := map[string]string{
+func transform(total int) string {
+	fmt.Println("total", total)
+	strMap := map[string]string{
 		"1": "one",
 		"2": "two",
 		"3": "three",
@@ -32,18 +37,19 @@ func transform(total int) (result string) {
 		"9": "nine",
 		"0": "zero",
 		"-": "negative",
-		"+": "plus",
 	}
 
 	str := strconv.Itoa(total)
+	result := ""
 	for _, c := range str {
-		result += numMap[string(c)]
+		result += strMap[string(c)]
 	}
 
-	return
+	return result
 }
 
 func calculate(parsed []string) int {
+	fmt.Println("parsed", parsed)
 	numMap := map[string]string{
 		"one":   "1",
 		"two":   "2",
@@ -59,24 +65,40 @@ func calculate(parsed []string) int {
 		"plus":  "+",
 	}
 
-	total := 0
 	st := ""
+	com := []string{}
 	parsed = append(parsed, "plus")
 	for _, word := range parsed {
-		if word == "plus" {
-			fmt.Println("st", st)
-			i, err := strconv.Atoi(st)
-			if err != nil {
-				return 0
+		switch {
+		case word == "plus":
+			if st == "" {
+				st += numMap[word]
+				continue
 			}
-			total += i
+
+			com = append(com, st)
 			st = ""
-		} else {
+		case word == "minus":
+			if st == "" {
+				st += numMap[word]
+				continue
+			}
+
+			com = append(com, st)
+			st = "-"
+		default:
 			st += numMap[word]
-			fmt.Println("defaultst", st)
 		}
 	}
 
-	fmt.Println("total", total)
+	total := 0
+	for _, st := range com {
+		i, err := strconv.Atoi(st)
+		if err != nil {
+			return 0
+		}
+		total += i
+	}
+
 	return total
 }

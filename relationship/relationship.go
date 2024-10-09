@@ -1,7 +1,6 @@
 package relationship
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -22,9 +21,7 @@ func GetMinStep(relationships []string, n1, n2 string) int {
 	checked := 0
 	finalPath := ""
 
-	minPath, finalPath := findPath(n1, ppls, n2, mapChecked, checked, finalPath)
-	fmt.Println(ppls)
-	fmt.Println("finalPath:", finalPath)
+	minPath, _ := findPath(n1, ppls, n2, mapChecked, checked, finalPath)
 	return minPath
 }
 
@@ -55,7 +52,6 @@ func findPath(target string, ppls map[string][]string, finalName string, mapChec
 		if minPath == 0 || v < minPath {
 			minPath = v
 			tmpPath = "-" + target + path
-			fmt.Println("tmpPath:", tmpPath)
 		}
 	}
 

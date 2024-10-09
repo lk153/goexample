@@ -36,7 +36,7 @@ func main() {
 	// n := relationship.GetMinStep(relationships, "a1", "a5")
 	// fmt.Println("RESULT:", n)
 
-	result := regex.StrExpress("minusonezeropluseight")
+	result := regex.StrExpress("minusonezerominuseight")
 	fmt.Println("RESULT:", result)
 }
 
