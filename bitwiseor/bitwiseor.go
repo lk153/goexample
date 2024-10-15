@@ -1,5 +1,10 @@
 package bitwiseor
 
+// func main() {
+// 	n := bitwiseor.FindLongestSlice([]int{5, 5, 2, 2, 3, 4, 2, 2, 2, 2, 3, 2})
+// 	fmt.Println("RESULT:", n)
+// }
+
 func FindLongestSlice(arr []int) []int {
 	min := -1
 	minIdx := -1

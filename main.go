@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-	"goexample/regex"
+	"goexample/longestsubstring"
 	"reflect"
 )
 
 func main() {
-
 	// type test struct {
 	// 	input  []int
 	// 	output []interface{}
@@ -32,12 +31,8 @@ func main() {
 	// 	fmt.Println()
 	// }
 
-	// relationships := []string{"a1:a2", "a2:a3", "a4:a3", "a4:a5", "a1:a3", "a1:a1"}
-	// n := relationship.GetMinStep(relationships, "a1", "a5")
-	// fmt.Println("RESULT:", n)
-
-	result := regex.StrExpress("minusonezerominuseight")
-	fmt.Println("RESULT:", result)
+	result := longestsubstring.Exec("ABCABCDAB")
+	fmt.Println(result)
 }
 
 func IsEqual(actual any, expected any) bool {

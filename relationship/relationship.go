@@ -4,6 +4,12 @@ import (
 	"strings"
 )
 
+// func main() {
+// 	relationships := []string{"a1:a2", "a2:a3", "a4:a3", "a4:a5", "a1:a3", "a1:a1"}
+// 	n := relationship.GetMinStep(relationships, "a1", "a5")
+// 	fmt.Println("RESULT:", n)
+// }
+
 func GetMinStep(relationships []string, n1, n2 string) int {
 	ppls := make(map[string][]string, 0)
 	for _, rels := range relationships {
